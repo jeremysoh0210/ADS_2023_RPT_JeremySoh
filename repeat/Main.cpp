@@ -11,7 +11,7 @@ void printOrderedArray(const OrderedArray<T>& arr) {
     }
     cout << endl;
 }
-
+ 
 int main() {
     OrderedArray<int> intArr(5);
 
