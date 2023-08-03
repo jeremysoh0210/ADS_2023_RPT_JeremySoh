@@ -84,5 +84,50 @@ int main() {
     cout << "Length after clearing: " << intArray.length() << endl;
     cout << endl;
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+
+    cout << endl;
+
+    //push the float elements to the array
+    floatArray.push(7.89f);
+    floatArray.push(1.234f);
+    floatArray.push(5.678f);
+
+    //print out the quantity of the elements from the array
+    cout << "Quantity of the element: " << floatArray.length() << endl;
+    cout << endl;
+
+    //print out the elements from the array using loop
+    for (int i = 0; i < floatArray.length(); ++i) {
+        cout << "Float Element " << i << ": " << floatArray.getElement(i) << endl;
+    }
+    cout << endl;
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+    cout << endl;
+
+    //push double elements to the array
+    doubleArray.push(1.11);
+    doubleArray.push(2.22);
+    doubleArray.push(3.33);
+    doubleArray.push(4.44);
+
+    //print out the quantity of the element from the array
+    cout << "Double Array Length: " << doubleArray.length() << endl;
+    cout << endl;
+    
+    //print out the elements from the array using loop
+    for (int i = 0; i < doubleArray.length(); ++i) {
+        cout << "Double Element " << i << ": " << doubleArray.getElement(i) << endl;
+    }
+    cout << endl;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+
+
     return 0;
 }
