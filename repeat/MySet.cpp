@@ -61,7 +61,24 @@ T MySet<T>::getElement(int index) const {
 //remove the element that is set for
 template<typename T>
 bool MySet<T>::remove(const T& value) {
-    
+    //set the index as -1
+    int index = -1;
+
+    //loop through the set to see if the elements is match to the value
+    for (int i = 0; i < data.length(); ++i) {
+        if (data.getElement(i) == value) {
+            index = i;
+            break;
+        }
+    }
+
+    //check if the valid index is greater or equal to 0
+    if (index >= 0) {
+        //remove the specify index of the elements
+        return data.remove(index);
+    }
+    //return false if it's not found 
+    return false;
 }
 
 //check if the elements is exist in the set
