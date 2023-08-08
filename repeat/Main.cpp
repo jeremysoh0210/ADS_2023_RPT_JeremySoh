@@ -163,5 +163,26 @@ int main() {
     }
     cout << endl;
 
+    cout << endl;
+
+    //print out the unique elements from set1 and set2 in the unionSet
+    cout << "Unique elements from two sets in Union Set: ";
+    for (int i = 0;i < unionSet.size();++i)
+    {
+        cout << unionSet.getElement(i) << " ";
+    }
+    cout << endl;
+
+
+    //print out the same elements from set1 and set2 in the duplicateSet
+    cout << "Same elements from two sets in Duplicate Set: ";
+    for (int i = 0;i < duplicateSet.size();++i)
+    {
+        cout << duplicateSet.getElement(i) << " ";
+    }
+    cout << endl;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
     return 0;
 }
