@@ -81,10 +81,17 @@ bool MySet<T>::remove(const T& value) {
     return false;
 }
 
-//check if the elements is exist in the set
+//loop through and check if the elements is exist in the set
 template<typename T>
 bool MySet<T>::contains(const T& value) const {
-    
+    for (int i = 0; i < data.length(i); ++i) {
+        if (data.getElement(i) == value) {
+            //return true if the elements is match to the specify value in the for loop
+            return true;
+        }
+    }
+    //return false if it's not valid or not found in the set
+    return false;
 }
 
 //reset and remove all the elements from the set
