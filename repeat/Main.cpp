@@ -139,9 +139,9 @@ int main() {
 
     //add element 40,50,10 to set2
     MySet<int> set2;
-    set1.insert(40);
-    set1.insert(50);
-    set1.insert(10);
+    set2.insert(40);
+    set2.insert(50);
+    set2.insert(10);
 
     //create 2 instance which are unionSet and duplicateSet
     //unionSet to find all the unique elements from set1 and set2 by using operator |
@@ -149,7 +149,19 @@ int main() {
     //duplicateSet to find the duplicate elements from set1 and set2 by using operator &
     MySet<int> duplicateSet = set1 & set2;
 
+    //print out all the elements of set1 by using loop and getElement() function
+    cout << "Element of Set 1: ";
+    for (int i = 0; i < set1.size(); ++i) {
+        cout << set1.getElement(i) << " ";
+    }
+    cout << endl;
 
+    //print out all the elements of set2 by using loop and getElement() function
+    cout << "Element of Set 2: ";
+    for (int i = 0; i < set2.size(); ++i) {
+        cout << set2.getElement(i) << " ";
+    }
+    cout << endl;
 
     return 0;
 }
