@@ -193,8 +193,25 @@ int main() {
         cout << set2.getElement(i) << " ";
     }
     cout << endl;
+    cout << endl;
 
+    //check if 10 is still exist in set 2
+    int CheckElement10 = 10;
+    if (set2.contains(CheckElement10)) {
+        cout << "Set 2 contains " << CheckElement10 << endl;
+    }
+    else {
+        cout << CheckElement10 << " Not found !! " << endl;
+    }
 
+    //check if 20 is still exist in set 1
+    int CheckElement20 = 20;
+    if (set1.contains(CheckElement20)) {
+        cout << "Set 1 contains " << CheckElement20 << endl;
+    }
+    else {
+        cout << CheckElement20 << " Not found !! " << endl;
+    }
     /////////////////////////////////////////////////////////////////////////////////////////////
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
     return 0;
