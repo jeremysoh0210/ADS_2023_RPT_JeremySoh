@@ -38,7 +38,7 @@ MySet<T>::MySet(const MySet& other) : data(other.data) {}
 template<typename T>
 MySet<T>::~MySet() {}
 
-//add the new elemens if if the elements is not contain in the elements
+//add the new elemens if if the elements is not contain in the set
 template<typename T>
 void MySet<T>::insert(const T& value) {
     if (!contains(value)) {
@@ -103,7 +103,14 @@ void MySet<T>::clear() {
 //create a new set by combining the union elements from the two sets
 template<typename T>
 MySet<T> MySet<T>::operator|(const MySet& other) const {
-    
+    MySet<T> result(*this);
+    for (int i = 0;i < other.size(); ++i) {
+        //insert all the elements into result by using the function insert
+        //there won't have duplicate elements in the result set
+        result.insert(other.getElement(i));
+    }
+    //return all the union elements from the two sets
+    return result;
 }
 
 //create a new set by the duplicate, repeat elements from the two sets
