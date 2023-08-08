@@ -181,6 +181,19 @@ int main() {
         cout << duplicateSet.getElement(i) << " ";
     }
     cout << endl;
+    cout << endl;
+
+    //test remove() function
+    cout << "Remove 10 from set 2" << endl;
+    set2.remove(10);
+
+    //print out the elements of set 2
+    cout << "Set 2 after remove 10: ";
+    for (int i = 0; i < set2.size(); ++i) {
+        cout << set2.getElement(i) << " ";
+    }
+    cout << endl;
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
