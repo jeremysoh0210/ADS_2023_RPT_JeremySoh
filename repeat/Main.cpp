@@ -1,5 +1,7 @@
 #include <iostream>
-#include "OrderedArray.cpp"
+//#include "OrderedArray.cpp"
+#include "MySet.cpp"
+
 #include <string>
 
 using namespace std;
@@ -127,6 +129,26 @@ int main() {
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+    cout << "Q2" << endl;
+
+    //add element 10,20,30 to set1
+    MySet<int> set1;
+    set1.insert(10);
+    set1.insert(20);
+    set1.insert(30);
+
+    //add element 40,50,10 to set2
+    MySet<int> set2;
+    set1.insert(40);
+    set1.insert(50);
+    set1.insert(10);
+
+    //create 2 instance which are unionSet and duplicateSet
+    //unionSet to find all the unique elements from set1 and set2 by using operator |
+    MySet<int> unionSet = set1 | set2;
+    //duplicateSet to find the duplicate elements from set1 and set2 by using operator &
+    MySet<int> duplicateSet = set1 & set2;
+
 
 
     return 0;
