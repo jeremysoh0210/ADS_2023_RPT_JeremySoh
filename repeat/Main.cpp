@@ -212,6 +212,13 @@ int main() {
     else {
         cout << CheckElement20 << " Not found !! " << endl;
     }
+    cout << endl;
+
+    //clear all the elements in set2
+    set2.clear();
+
+    //print out the size of set2 after clearing all the elements
+    cout << "Size of set 2 after using clear() : " << set2.size() << endl;
     /////////////////////////////////////////////////////////////////////////////////////////////
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
     return 0;
