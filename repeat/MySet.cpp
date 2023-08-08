@@ -116,5 +116,15 @@ MySet<T> MySet<T>::operator|(const MySet& other) const {
 //create a new set by the duplicate, repeat elements from the two sets
 template<typename T>
 MySet<T> MySet<T>::operator&(const MySet& other) const {
-    
+    MySet<T> result;
+    for (int i = 0;i < other.size(); ++i) {
+        T value = other.getElement(i);
+
+        //add the duplicated elements to result by using insert function
+        if (contains(value)) {
+            result.insert(value);
+        }
+    }
+    //only return the duplicate elements from the two sets
+    return result;
 }
