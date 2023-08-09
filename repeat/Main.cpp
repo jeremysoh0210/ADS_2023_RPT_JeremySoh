@@ -1,11 +1,68 @@
 #include <iostream>
 //#include "OrderedArray.cpp"
 #include "MySet.cpp"
+#include <fstream>
+#include <sstream>
+#include <unordered_set>
+#include <vector>
+#include <algorithm>
 
 #include <string>
 
 using namespace std;
 
+//read the csv file by using the filename and the leads (to store the unique phone number)
+void readLeadsCSV(const string& filename, unordered_set<string>& leads) {
+    //if the file has problem and cannot be open
+    //it will print out the error message
+    ifstream inputFile(filename);
+    if (!inputFile.is_open()) {
+        cout << "Error !!! Input file cannot be open: " << filename << endl;
+        return;
+    }
+
+    string line;
+    //to skip the first line and to move the file pointer past it
+    getline(inputFile, line);
+
+    //while looping each line
+    while (getline(inputFile, line)) {
+        //divide the line into seperate attributes
+        istringstream ss(line);
+        string phoneNumber;
+
+        //read the datas until a comma is encountered
+        getline(ss, phoneNumber, ',');
+
+        //store it in phoneNumber var
+        leads.insert(phoneNumber);
+    }
+
+    //close the csv file
+    inputFile.close();
+}
+
+void writeCSV(const string& filename, const vector<string>& leads) {
+    //using output file stream to open the file by the filename
+    ofstream outputFile(filename);
+
+    //if the file has problem and cannot be open
+    //it will print out the error message
+    if (!outputFile.is_open()) {
+        cout << "Error !!! Output file cannot be open: " << filename << endl;
+        return;
+    }
+
+    outputFile << "Phone Number" << endl;
+
+    //loop and write the phone number to the output file
+    for (const string& phoneNumber : leads) {
+        outputFile << phoneNumber << endl;
+    }
+
+    //close the output file
+    outputFile.close();
+}
 
 int main() {    
     cout << "Q1" << endl;
@@ -129,6 +186,7 @@ int main() {
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+    cout << endl;
     cout << "Q2" << endl;
 
     //add element 10,20,30 to set1
@@ -219,7 +277,12 @@ int main() {
 
     //print out the size of set2 after clearing all the elements
     cout << "Size of set 2 after using clear() : " << set2.size() << endl;
+    cout << endl;
     /////////////////////////////////////////////////////////////////////////////////////////////
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+    cout << endl;
+    cout << "Q3" << endl;
+    
+    
     return 0;
 }
