@@ -283,6 +283,52 @@ int main() {
     cout << endl;
     cout << "Q3" << endl;
     
-    
+    //create two unordered_set<string> which are johnLeads and janeLeads, used to store phone numebr
+    unordered_set<string> johnLeads, janeLeads;
+
+    //read the file's name which are "johns_leads_20.csv" and store the phone numbers into unordered set which is named johnLeads
+    readLeadsCSV("johns_leads_20.csv", johnLeads);
+    readLeadsCSV("janes_leads_20.csv", janeLeads);
+
+    //create 3 vectors which are commonLeads, johnUniqueLeads, janeUniqueLeads
+    //these vectors are used to store the results of unique elements and duplicate elements
+    vector<string> commonLeads, johnUniqueLeads, janeUniqueLeads;
+
+    //loop and compare through every phone number from johnLeads set
+    for (const string& phoneNumber : johnLeads) {
+        //check if the phone number is found in janeLeads set, it is a common lead
+        if (janeLeads.count(phoneNumber)) {
+            //then the phone number will be added to commonLeads vector using push_back() function
+            commonLeads.push_back(phoneNumber);
+        }
+        else {
+            //else it is a unique lead submitted by john
+            //use push_back() function to add the phone number to johnUniqueLeads
+            johnUniqueLeads.push_back(phoneNumber);
+        }
+    }
+
+    //loop through each phone number from janeLeads
+    for (const string& phoneNumber : janeLeads) {
+        //check if the phone number is not found in johnLeads set
+        if (!johnLeads.count(phoneNumber)) {
+            //then it is an unique lead by jane
+            //use push_back() function to add the phone number to janeUniqueaLeads
+            janeUniqueLeads.push_back(phoneNumber);
+        }
+    }
+
+    //used writeCSV() function to write the common and unique leads into the csv files below
+    writeCSV("common.csv", commonLeads);
+    writeCSV("john_unique.csv", johnUniqueLeads);
+    writeCSV("jane_unique.csv", janeUniqueLeads);
+
+    cout << "The data are added to the CSV files." << endl;
+    cout << "You can check the CSV files from the folder." << endl;
+
+    cout << endl;
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+
+
     return 0;
 }
