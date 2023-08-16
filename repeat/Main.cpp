@@ -367,7 +367,7 @@ int main() {
 
     //close annd release the commondFile after reading the file
     commonFile.close();
-    cout << endl;
+    cout << endl; 
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
 
     return 0;
