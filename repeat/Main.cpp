@@ -329,6 +329,46 @@ int main() {
     cout << endl;
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
 
+    //To read the data from the csv files by the filename
+    ifstream commonFile("common.csv");
+    ifstream janeUniqueFile("jane_unique.csv");
+    ifstream johnUniqueFile("john_unique.csv");
+
+    cout << endl;
+    cout << "Data from the common.csv file" << endl;
+
+    //check if the commonFile is open
+    if (commonFile.is_open()) {
+        string line;
+        int commonCount = 0;
+        //loop through from commonFile and increase the commonCount by reading through each line using getline() function
+        while (getline(commonFile, line)) {
+            commonCount++;
+        }
+        //close annd release the commondFile after reading the file
+        commonFile.close();
+        //taking the header row out of the commonCount by subtracting 1 to show the counts
+        cout << "Amount of data in common.csv: " << commonCount - 1 << " rows." << endl;
+    }
+    else {
+        cerr << "Error opening common.csv" << endl;
+    }
+
+    //open the filename which is "common.csv"
+    commonFile.open("common.csv");
+    string line;
+
+    //read the file's first line, then deletes it.
+    getline(commonFile, line);
+    //reads the line from the file and stores it in "line" and print out in the while loop
+    while (getline(commonFile, line)) {
+        cout << line << endl;
+    }
+
+    //close annd release the commondFile after reading the file
+    commonFile.close();
+    cout << endl;
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
 
     return 0;
 }
