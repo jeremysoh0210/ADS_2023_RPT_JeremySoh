@@ -383,7 +383,7 @@ int main() {
         }
         //close annd release the janeUniqueFile after reading the file
         janeUniqueFile.close();
-        cout << "Amount of data in jane_unique.csv: " << janeUniqueCount - 1 << " rows." << endl; // Subtract 1 for the header
+        cout << "Amount of data in jane_unique.csv: " << janeUniqueCount - 1 << " rows." << endl;
     }
     else {
         cerr << "Error opening jane_unique.csv" << endl;
@@ -404,6 +404,26 @@ int main() {
     janeUniqueFile.close();
     cout << endl;
     cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
+
+    cout << endl;
+    cout << "Data from the john_unique.csv file" << endl;
+
+    //check if johnUniqueFile is open
+    if (johnUniqueFile.is_open()) {
+        string line2;
+        int johnUniqueCount = 0;
+        //loop through from johnUniqueFile and increase the johnUniqueCount by reading through each line using getline() function
+        while (getline(johnUniqueFile, line2)) {
+            johnUniqueCount++;
+        }
+        //close annd release the johnUniqueFile after reading the file
+        johnUniqueFile.close();
+        cout << "Amount of data in john_unique.csv: " << johnUniqueCount - 1 << " rows." << endl;
+    }
+    else {
+        cerr << "Error opening john_unique.csv" << endl;
+    }
+
 
     return 0;
 }
