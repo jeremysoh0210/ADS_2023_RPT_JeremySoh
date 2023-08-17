@@ -396,7 +396,7 @@ int main() {
     //read the file's first line1, then deletes it
     getline(janeUniqueFile, line1);
 
-    //reads the line1 from the file and stores it in "line1" and print out in the while loop
+    //reads the lines from the file and stores it in "line1" and print out in the while loop
     while (getline(janeUniqueFile, line1)) {
         cout << line1 << endl;
     }
@@ -424,6 +424,20 @@ int main() {
         cerr << "Error opening john_unique.csv" << endl;
     }
 
+    //open the filename which is "john_unique.csv"
+    johnUniqueFile.open("john_unique.csv");
+    string line2;
 
+    //read the file's first line, then deletes it
+    getline(johnUniqueFile, line2);
+
+    //reads the lines from the file and stores it in "line2" and print out in the while loop
+    while (getline(johnUniqueFile, line2)) {
+        cout << line2 << endl;
+    }
+    //close annd release the johnUniqueFile after reading the file
+    johnUniqueFile.close();
+    cout << endl;
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
     return 0;
 }
