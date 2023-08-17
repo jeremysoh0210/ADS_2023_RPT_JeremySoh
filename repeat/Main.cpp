@@ -358,7 +358,7 @@ int main() {
     commonFile.open("common.csv");
     string line;
 
-    //read the file's first line, then deletes it.
+    //read the file's first line, then deletes it
     getline(commonFile, line);
     //reads the line from the file and stores it in "line" and print out in the while loop
     while (getline(commonFile, line)) {
@@ -388,6 +388,22 @@ int main() {
     else {
         cerr << "Error opening jane_unique.csv" << endl;
     }
+
+    //open the filename which is "jane_unique.csv"
+    janeUniqueFile.open("jane_unique.csv");
+    string line1;
+
+    //read the file's first line1, then deletes it
+    getline(janeUniqueFile, line1);
+
+    //reads the line1 from the file and stores it in "line1" and print out in the while loop
+    while (getline(janeUniqueFile, line1)) {
+        cout << line1 << endl;
+    }
+    //close annd release the janeUniqueFile after reading the file
+    janeUniqueFile.close();
+    cout << endl;
+    cout << "/////////////////////////////////////////////////////////////////////////////////////////////" << endl;
 
     return 0;
 }
